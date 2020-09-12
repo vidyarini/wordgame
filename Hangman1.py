@@ -163,6 +163,7 @@ while(Want_to_Play.upper() == 'Y'):
     [score_l, streak] = test.letter_presence()
     score_list.append(score_l)
     print("Total Score:", sum(score_list))
+    #ask player if they want to continue
     Want_to_Play = input("Do you want to play again?(Y/N): ")
 
 
