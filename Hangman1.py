@@ -1,5 +1,6 @@
 import pymysql
 from random import randint, choice
+from Word_API import *
 
 conn = pymysql.connect("127.0.0.1", user="root", passwd="password", db="Hangman", port=3306)
 curr = conn.cursor()
@@ -153,7 +154,7 @@ while(Want_to_Play.upper() == 'Y'):
     if streak < 2: results = results1
     else: results = results2
 
-    while len(word_selected) < 6 or (word_selected in words_used) or word_selected.find('-') != -1:
+    while len(word_selected) < 6 or (word_selected in words_used) or word_selected.find('-') != -1 or not(Word_Api.is_proper_noun(word_selected)):
          word_selected = choice(results)[1]
     words_used.append(word_selected)
 
