@@ -27,5 +27,5 @@ class Word_Api:
                 return True
 
         except KeyError:
-            #When the eord is not recognised by the API
+            #When the word is not recognised by the API
             return False
